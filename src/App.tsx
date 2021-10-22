@@ -1,9 +1,13 @@
 import React from 'react';
+import {ProductList} from "./Components/ProductList"
+import './App.css';
 
-function App() {
+const App:React.FC = ()  => {
   return (
     <div className="App">
       <h1>Ecommerce app</h1>
+      <ProductList />
+      
     </div>
   );
 }
