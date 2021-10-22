@@ -1,7 +1,11 @@
 import React from 'react';
 
- const App:React.FC = ()=> (
-   <> </>
- )
+function App() {
+  return (
+    <div className="App">
+      <h1>Ecommerce app</h1>
+    </div>
+  );
+}
 
  export default App;
