@@ -1,17 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Header, Logo } from './style'
+import   Navbar from  './Navbar'
 
 function Layout() {
     return (
         <Header>
-            <Navbar>
-                Navbar
-            </Navbar>
+            <Logo> Logo </Logo>
+            <Navbar />     
         </Header>
     )
 }
 
-export default Layout
-
-const Header = styled.div``
-const Navbar = styled.nav``
+export default Layout;
