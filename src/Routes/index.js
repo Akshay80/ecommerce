@@ -6,9 +6,7 @@ export const AppRoutes = () => {
         <>
             <Router >
             <Switch>
-                <Route exact path="/" component={Layout}>
-                    
-                </Route>
+                <Route exact path="/" component={Layout}></Route>
             </Switch>
             </Router>
         </>

@@ -10,8 +10,7 @@ const App:React.FC = ()  => {
     <div className="App">
       <AppRoutes />
       <h1>Ecommerce app</h1>
-      <ProductList />
-      
+      <ProductList />     
     </div>
   );
 }

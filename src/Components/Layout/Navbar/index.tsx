@@ -1,15 +1,15 @@
 import React from 'react';
-import { Ul } from './style'
+import { Ul, Input } from './style'
 
 function Navbar () {
   return (
     <Ul>
-      <li>Home</li>
-      <li>Categories</li>
-      <li>Products</li>
-      <li>Pages</li>
-      <li>Element</li>
-      <li>Blog</li>
+         <Input className="search-bar" type="text" placeholder="Search"></Input>
+      <li className="d-flex">Home</li>
+      <li className="d-flex">Categories</li>
+      <li className="d-flex">Login/Signup
+      </li>
+   
     </Ul>
   )
 }
