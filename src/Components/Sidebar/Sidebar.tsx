@@ -1,9 +1,10 @@
 import { Div, DivText, DivHead } from './sidebarStyles';
-export const Sidebar:React.FC = () => {
+
+function Sidebar () {
 
     return(
         <>
-    <div className="container-flud">
+    <div className="container m-0 p-0">
     <Div>
         <DivHead>
             Categories
@@ -25,3 +26,5 @@ export const Sidebar:React.FC = () => {
     </>
 )
 }
+
+export default Sidebar;

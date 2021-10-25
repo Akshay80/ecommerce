@@ -3,19 +3,20 @@ import styled from 'styled-components';
 export const Ul = styled.ul`
   list-style: none;
   display: flex;
-  flex-flow: row;
+  height: 100%;
   align-items: center;
   justify-content: center;
-  padding-right: 40px;
+  /* padding-right: 40px; */
   li {
     padding-left:30px;
     font-size: large;
-    font-weight: 700;
+    font-weight: 500;
       &:hover {
     cursor: pointer;
     color: green;
-  }
-    
+    position: relative  ;
+  }  
+
   }
   @media (max-width: 768px) {
     flex-flow: column;
@@ -31,4 +32,21 @@ export const Ul = styled.ul`
       color: #fff;
     }
   }
+`
+
+export const Input= styled.input`
+margin-right: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 5px;
+background-color: white;
+border: 1px solid green;
+&:hover {
+  border: 2px solid green;
+}
+&::placeholder {
+       color: green;
+       padding-left: 10px;
+   }
 `
