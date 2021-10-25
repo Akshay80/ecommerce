@@ -62,7 +62,7 @@ export const ProductList: React.FC = () => {
             </div>
         </div>
     </div> */}
-    <div className="container">
+    <div className="container mb-5">
     <div className="row">
         <div className="col-12">
             <h2 className="mt-4 mb-4 text-center">Our Products</h2>

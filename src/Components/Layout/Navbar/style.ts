@@ -6,7 +6,7 @@ export const Ul = styled.ul`
   height: 100%;
   align-items: center;
   justify-content: center;
-  padding-right: 40px;
+  /* padding-right: 40px; */
   li {
     padding-left:30px;
     font-size: large;

@@ -1,6 +1,7 @@
 import React from "react";
 import { Ul, Input } from "./style";
 import "../../../index.css"
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
@@ -86,6 +87,16 @@ function Navbar() {
             </a>
           </li>
         </ul>
+      </div>
+
+      <div className="dropdown">
+        <Link to="/contact">
+        <button
+          className="btn"
+          type="button" 
+        >
+        Contact Us
+        </button></Link>
       </div>
     </Ul>
   );
