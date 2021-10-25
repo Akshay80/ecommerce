@@ -1,5 +1,6 @@
 import { Div, DivText, DivHead } from './sidebarStyles';
-export const Sidebar:React.FC = () => {
+
+function Sidebar () {
 
     return(
         <>
@@ -25,3 +26,5 @@ export const Sidebar:React.FC = () => {
     </>
 )
 }
+
+export default Sidebar;

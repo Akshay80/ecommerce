@@ -1,5 +1,5 @@
 import React from "react";
-import { Logo } from "../Layout/style";
+import { Logo } from "../Layout/Header/style";
 import Footer from "./FooterContainer";
 import ImgLogo from "../../assets/Images/logo_trans.png";
 

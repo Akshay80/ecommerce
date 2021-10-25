@@ -44,7 +44,7 @@ export const Link = styled.a`
 `;
 
 export const Title = styled.p`
-  font-size: 24px;
+  font-size: 20px;
   color: #362f3b; 
   /* margin-top: 20px; */
   margin-bottom: 20px;

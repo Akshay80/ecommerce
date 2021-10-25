@@ -1,6 +1,7 @@
 import React from "react";
 import { Ul, Input } from "./style";
 import "../../../index.css"
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
@@ -89,12 +90,13 @@ function Navbar() {
       </div>
 
       <div className="dropdown">
+        <Link to="/contact">
         <button
           className="btn"
           type="button" 
         >
         Contact Us
-        </button>
+        </button></Link>
       </div>
     </Ul>
   );
