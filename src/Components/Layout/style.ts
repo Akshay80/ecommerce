@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const Header = styled.div`
 width: 100%;
-/* height : 100px; */
-/* margin-top: 0px; */
 color : black;
 position: relative;
 display: flex;
-background-color: blanchedalmond;
+/* border-bottom: 1px grey; */
+border-bottom: 1px solid lightgrey;
+/* background-color: lightgrey; */
 /* justify-content: space-around; */
 `
 

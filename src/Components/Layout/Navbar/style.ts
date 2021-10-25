@@ -35,6 +35,7 @@ export const Ul = styled.ul`
 `
 
 export const Input= styled.input`
+margin-right: 40px;
 display: flex;
 align-items: center;
 justify-content: center;
