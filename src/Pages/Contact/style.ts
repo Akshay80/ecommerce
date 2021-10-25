@@ -17,6 +17,7 @@ flex-direction: column;
 export const FormWrapper = styled.div`
 height: 100vh;
 display: flex;
+padding-left: 80px;
 flex-direction: column;`
 
 
@@ -50,7 +51,7 @@ export const Input = styled.input`
 border: 1px solid green; 
 padding: 1em; 
 margin-top: 5px;
-width: 80%; 
+width: 100%; 
 height: 40px;
 `;
 
@@ -62,7 +63,7 @@ export const Textarea = styled.textarea`
 border: 1px solid green; 
 padding: 1em; 
 margin-top: 5px;
-width: 80%; 
+width:  100%; 
 `;
 
 export const StyledTitle = styled.div`

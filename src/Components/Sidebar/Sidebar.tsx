@@ -4,7 +4,7 @@ function Sidebar () {
 
     return(
         <>
-    <div className="container m-0 p-0">
+    
     <Div>
         <DivHead>
             Categories
@@ -22,7 +22,7 @@ function Sidebar () {
             Shoes
             </DivText>
     </Div>
-    </div>
+  
     </>
 )
 }

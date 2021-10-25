@@ -3,6 +3,7 @@ import { Route } from 'react-router'
 import { AppRoutes } from '../../Routes'
 import { FooterContainer } from '../Footer'
 import { ProductList } from '../ProductList'
+import { Carasoul } from '../Carasoul/Carasoul'
 import Sidebar from '../Sidebar/Sidebar'
 
 function Layout() {
@@ -13,6 +14,7 @@ function Layout() {
         <Sidebar /> 
           </div>
           <div className="col-9">
+            <Carasoul />
           <ProductList />
           </div>
         </div>

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap');
+
+.textCarasoul{
+    font-family: 'Jost', sans-serif;
+}
+.bannerItem{
+    color: #558063;
+    font-family: "Jost", Sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1em;
+    letter-spacing: 0.4px;
+    z-index: 1;
+    position: absolute;
+    top:10%;
+    left:2%
+}
+
+.bannerItems{
+    color: #333333;
+    font-family: "Jost", Sans-serif;
+    font-size: 2.8em;
+    font-weight: 700;
+    line-height: 1.05em;
+    letter-spacing: -1.2px;
+    position: absolute;
+    top:25%;
+    left:2%
+}
+
+.shopBtn{
+    left: 2%;
+    position: absolute;
+    bottom: 15%;
+}
+
+.bannerRightItem{
+    color: #558063;
+    font-family: "Jost", Sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1em;
+    letter-spacing: 0.4px;
+    z-index: 1;
+    position: absolute;
+    top:10%;
+    right:5%
+
+}
+
+.bannerRightItems{
+    color: #333333;
+    text-align: end;
+    font-family: "Jost", Sans-serif;
+    font-size: 2.8em;
+    font-weight: 700;
+    line-height: 1.05em;
+    letter-spacing: -1.2px;
+    position: absolute;
+    top:25%;
+    right:4%;
+}
+
+.shopRightBtn{
+    right: 2%;
+    position: absolute;
+    bottom: 15%;
+}

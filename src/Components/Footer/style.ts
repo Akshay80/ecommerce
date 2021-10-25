@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   padding: 30px;
   background: #fff;
-  border-top: 1px solid grey;
+  box-shadow: 0px 1px 10px grey;
   @media (max-width: 1000px) {
     padding: 70px 30px;
   }

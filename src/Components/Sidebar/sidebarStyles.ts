@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Div = styled.ul`
 color:#fff;
-box-shadow: 1px 5px 15px black;
 border-radius: 2px;
 padding:30px;
 height:100vh;

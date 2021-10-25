@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { HeaderWrapper, Logo } from "./style";
 import Navbar from "../Navbar";
-import ImgLogo from "../../../assets/Images/logo_trans.png"
+import ImgLogo from "../../../assets/images/logo_trans.png"
 import { Link } from "react-router-dom";
 
 function Header() {
