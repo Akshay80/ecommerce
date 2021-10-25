@@ -5,6 +5,7 @@ import { Sidebar } from './Components/Sidebar/Sidebar';
 import { AppRoutes } from './Routes';
 import {ProductList} from "./Components/ProductList"
 import './App.css';
+import  { FooterContainer }  from './Components/Footer'
 
 const App:React.FC = ()  => {
   return (
@@ -20,10 +21,9 @@ const App:React.FC = ()  => {
       
       </div>
       
-      
       {/* <h1>Ecommerce app</h1> */}
       
-      
+     <FooterContainer /> 
     </div>
   );
 }

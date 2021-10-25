@@ -87,6 +87,15 @@ function Navbar() {
           </li>
         </ul>
       </div>
+
+      <div className="dropdown">
+        <button
+          className="btn"
+          type="button" 
+        >
+        Contact Us
+        </button>
+      </div>
     </Ul>
   );
 }
