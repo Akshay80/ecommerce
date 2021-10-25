@@ -7,4 +7,6 @@
   box-shadow: none!important;
 }
 
-
+.row{
+    --bs-gutter-x: unset!important;
+}

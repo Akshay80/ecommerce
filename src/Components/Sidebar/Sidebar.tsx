@@ -3,7 +3,7 @@ export const Sidebar:React.FC = () => {
 
     return(
         <>
-    <div className="container m-0 p-0">
+    
     <Div>
         <DivHead>
             Categories
@@ -21,7 +21,7 @@ export const Sidebar:React.FC = () => {
             Shoes
             </DivText>
     </Div>
-    </div>
+  
     </>
 )
 }
