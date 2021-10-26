@@ -10,7 +10,7 @@ export const Sidebar:React.FC = () => {
 
     return(
         <>
-    <div className="container-flud">
+    
     <Div>
         <DivHead>
             Categories
@@ -28,7 +28,9 @@ export const Sidebar:React.FC = () => {
             Shoes
             </DivText>
     </Div>
-    </div>
+  
     </>
 )
 }
+
+export default Sidebar;

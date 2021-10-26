@@ -1,16 +1,14 @@
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import Layout from "../Components/Layout";
+import Contact from "../Pages/Contact"
 
 export const AppRoutes = () => {
     return(
-        <>
+        
             <Router >
             <Switch>
-                <Route exact path="/" component={Layout}>
-                    
-                </Route>
+                <Route exact path="/contact" component={Contact} />  
             </Switch>
             </Router>
-        </>
+        
     )
-}
+    }
