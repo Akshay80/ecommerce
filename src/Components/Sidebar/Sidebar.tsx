@@ -1,5 +1,12 @@
+import * as ACTIONS from './action'
+import { useDispatch } from 'react-redux';
 import { Div, DivText, DivHead } from './sidebarStyles';
+import { useEffect } from 'react';
 export const Sidebar:React.FC = () => {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(ACTIONS.getCategories())
+    }, [])
 
     return(
         <>

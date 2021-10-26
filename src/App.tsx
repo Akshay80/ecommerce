@@ -4,7 +4,9 @@ import { Sidebar } from './Components/Sidebar/Sidebar';
 // import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import { AppRoutes } from './Routes';
 import {ProductList} from "./Components/ProductList"
+
 import './App.css';
+
 
 const App:React.FC = ()  => {
   return (
