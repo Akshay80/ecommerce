@@ -2,9 +2,12 @@ import styled from "styled-components";
 
 export const Div = styled.ul`
 color:#fff;
+position: fixed;
+top: 50px;
+z-index: 1;
 border-radius: 2px;
-padding:30px;
-height:100vh;
+padding-top:30px;
+height:100%;
 list-style-type: none;
 `
 

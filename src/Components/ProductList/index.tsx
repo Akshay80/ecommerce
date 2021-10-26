@@ -1,6 +1,6 @@
 import React from "react";
 import * as ProductPage from "./productstyled";
-import cardImage from "../../assets/images/product.jpg";
+import cardImage from "../../assets/Images/product.jpg";
 // import Button from "../Button";
 import './products.css';
 
