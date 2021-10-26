@@ -3,7 +3,7 @@ import Header from "./Components/Layout/Header/index";
 // import { Sidebar } from './Components/Sidebar/Sidebar';
 // import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import { AppRoutes } from './Routes';
-import { ProductList } from "./Components/ProductList"
+import {ProductList} from "./Components/ProductList"
 import { Carasoul } from './Components/Carasoul/Carasoul';
 import './App.css';
 import { FooterContainer } from "./Components/Footer";
@@ -13,6 +13,8 @@ import Contact from "./Pages/Contact";
 import Login from "./Components/Authentication/Login";
 import Signup from "./Components/Authentication/Signup";
 import Cart from "./Pages/Cart";
+
+
 
 const App: React.FC = () => {
   return (
