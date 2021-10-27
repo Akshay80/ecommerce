@@ -20,7 +20,6 @@ export const Ul = styled.ul`
   justify-content: center;
   margin-bottom: 0px;
   padding-left: 0px;
-  /* padding-right: 40px; */
 
   li {
     padding-left:20px;
