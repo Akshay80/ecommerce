@@ -1,7 +1,5 @@
 import React from "react";
 import Header from "./Components/Layout/Header/index";
-// import { Sidebar } from './Components/Sidebar/Sidebar';
-// import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import { AppRoutes } from './Routes';
 import {ProductList} from "./Components/ProductList"
 import { Carasoul } from './Components/Carasoul/Carasoul';
@@ -12,9 +10,8 @@ import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Contact from "./Pages/Contact";
 import Login from "./Components/Authentication/Login";
 import Signup from "./Components/Authentication/Signup";
-import Cart from "./Pages/Cart";
-
-
+import  ForgotPassword  from "./Components/Authentication/ForgotPassword";
+import Cart from "./Pages/CartContainer/Cart/Cart";
 
 const App: React.FC = () => {
   return (
@@ -25,9 +22,10 @@ const App: React.FC = () => {
         <Switch>
           <Route exact path="/" component={Layout} /> 
             <Route exact path="/contact" component={Contact} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={Signup} />
             <Route exact path="/cart" component={Cart} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} /> 
+            <Route exact path="/forgot-password" component={ForgotPassword} />
         </Switch>
         <FooterContainer />
         </div>

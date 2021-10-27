@@ -1,4 +1,16 @@
 import styled from 'styled-components';
+import IconButton from '@material-ui/core/IconButton';
+
+export const Wrapper = styled.div`
+  margin: 0px;
+`;
+
+export const StyledButton = styled(IconButton)`
+ display: flex;
+ align-items: center;
+ justify-content: center;
+`;
+
 
 export const Ul = styled.ul`
   list-style: none;
@@ -6,9 +18,12 @@ export const Ul = styled.ul`
   height: 100%;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0px;
+  padding-left: 0px;
   /* padding-right: 40px; */
+
   li {
-    padding-left:30px;
+    padding-left:20px;
     font-size: large;
     font-weight: 500;
       &:hover {
@@ -49,4 +64,4 @@ border: 1px solid green;
        color: green;
        padding-left: 10px;
    }
-`
+`;

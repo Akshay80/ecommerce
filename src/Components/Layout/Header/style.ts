@@ -7,6 +7,7 @@ position: sticky;
 top:0;
 z-index: 999;
 display: flex;
+justify-content: space-between;
 border-bottom: 1px solid lightgrey;
 background-color: #fff;
 `

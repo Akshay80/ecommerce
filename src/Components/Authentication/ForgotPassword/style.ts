@@ -65,6 +65,15 @@ export const InputContainer = styled.div`
   margin-top: 20px;
 `;
 
+export const SendOTP = styled.p`
+  color: red;
+  cursor: pointer;
+  border: 1px solid red;
+  padding: 0.3rem 1rem;
+  border-radius: 2rem;
+
+`;
+
 export const ButtonContainer = styled.div`
   margin: 1rem 0 2rem 0;
   width: 100%;
@@ -77,13 +86,6 @@ export const LoginWith = styled.p`
   cursor: pointer;
   color: blue;
   margin-bottom: 50px;
-`;
-
-export const IconsContainer = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  margin: 2rem 0;
-  width: 80%;
 `;
 
 export const ForgotPassword = styled.p`
@@ -128,20 +130,4 @@ export const Button = styled.button`
   color: white;
   border-radius: 2rem;
   cursor: pointer;
-`;
-
-
-export const Icon = styled.div`
-  height: 3.5rem;
-  width: 3.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4rem;
-  color: white;
-  cursor: pointer;
-  svg {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
 `;

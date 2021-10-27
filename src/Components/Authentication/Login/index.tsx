@@ -20,10 +20,11 @@ function Login() {
          <Link to="/">
           <Button>Login</Button></Link>
         </ButtonContainer>
-        <ForgotPassword>Forgot Password ?</ForgotPassword>
+        <ForgotPassword>
+          <Link to="/forgot-password">Forgot Password?</Link></ForgotPassword>
         <LoginWith className="mb-5">
         <Link to="/signup">
-          Or Signup</Link></LoginWith>
+          Signup</Link></LoginWith>
         {/* <IconsContainer>
           <Icon color={FacebookBackground}>
             <FaFacebookF />

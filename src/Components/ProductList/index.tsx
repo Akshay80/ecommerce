@@ -3,18 +3,19 @@ import React, { useState } from "react";
 import './products.css';
 import { useEffect } from "react";
 
-interface Rating {
-    rate: number,
-    count: number
+export interface Rating{
+rate: number,
+count: number
 }
-interface Products {
-    id: string
-    price: number
-    description: string
-    image: string
-    category?: string
-    title?: string
-    rating?: Rating
+export interface Products {
+  id: number
+  price: number
+  description: string
+  image: string
+  category?: string
+  title?: string
+  rating?: Rating
+  amount?: number
 }
 
 interface Props {
@@ -55,7 +56,6 @@ export const ProductList: React.FC<Props> = ({category}) => {
                     </div>
                     {product.map(items =>
                         <div className="col-md-6 col-lg-4">
-
                             <div className="card-box" style={{height:"700px"}}>
                                 <div className="card-thumbnail">
                                     <img src={items.image} className="img-fluid" alt="" />

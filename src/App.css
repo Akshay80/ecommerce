@@ -8,3 +8,7 @@
 .row{
     --bs-gutter-x: unset!important;
 }
+
+a {
+  text-decoration: none ;
+}
