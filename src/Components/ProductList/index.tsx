@@ -1,6 +1,6 @@
 import React from "react";
 import * as ProductPage from "./productstyled";
-import cardImage from "../../assets/images/product.jpg";
+import cardImage from "../../assets/Images/product.jpg";
 // import Button from "../Button";
 import './products.css';
 
@@ -107,7 +107,7 @@ export const ProductList: React.FC = () => {
         <div className="col-md-6 col-lg-4">
             <div className="card-box">
                 <div className="card-thumbnail">
-                    <img src={cardImage} className="img-fluid" alt=""/>
+                  <img src={cardImage} className="img-fluid" alt=""/>
                 </div>
                 <h3><a href="#" className="mt-2 text-danger">Electronics</a></h3>
                 <p className="text-secondary">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
@@ -117,7 +117,6 @@ export const ProductList: React.FC = () => {
         </div>
 
         <div className="col-md-6 col-lg-4">
-       
             <div className="card-box">
                 <div className="card-thumbnail">
                     <img src={cardImage} className="img-fluid" alt=""/>
