@@ -12,10 +12,10 @@ interface categories {
   export default (state = initialState, action:TodoActions) => {
     console.log(action, 'value in reducer')
     switch (action.type) {
-      case Types.FETCH_CATEGORY_SUCCESS:
-        return {
+      // case Types.FETCH_CATEGORY_SUCCESS:
+      //   return {
             
-        };
+      //   };
       case Types.FETCH_CATEGORY_SUCCESS:
         
         return {

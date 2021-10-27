@@ -3,7 +3,7 @@ import categoriesReducer  from '../Components/Sidebar/reducer'
 
 const allReducer = combineReducers(
     {
-        categoryReducer:categoriesReducer
+        categoryReducer:categoriesReducer,
 }
 )
 
