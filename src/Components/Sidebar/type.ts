@@ -1,9 +1,8 @@
 import * as Types from './actionType'
 
-export interface categoriesState {
+export interface categoriesStateType {
   pending: boolean;
-  categories: [];
-  error: string | null;
+  categories: string[];
 }  
 
 export interface FetchCategoriesSuccess {
