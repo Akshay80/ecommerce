@@ -1,24 +1,26 @@
 import * as Types from "./actionType";
-import {TodoActions} from './type'
+import {TodoActions, categoriesStateType} from './type'
+
+
   
-interface categories {
-    categoriesData: string[];
-  }
-  
-  const initialState: categories = {
-    categoriesData:[]
+  const initialState: categoriesStateType = {
+    pending:false,
+    categories:[]
   };
+
+  
   
   export default (state = initialState, action:TodoActions) => {
-    console.log(action, 'value in reducer')
     switch (action.type) {
-      case Types.FETCH_CATEGORY_SUCCESS:
+      case Types.FETCH_CATEGORY_REQUEST:
         return {
-            
+          ...state,
+          pending:true,
         };
       case Types.FETCH_CATEGORY_SUCCESS:
-        
         return {
+          ... state,
+          pending:false,
           categories:action.payload.categoriesData
         };
       case Types.FETCH_CATEGORY_FAILURE:

@@ -13,11 +13,9 @@ const getTodos = () => {
 function* fetchCategoriesSaga():any {
   try {
     const response = yield call(getTodos);
-    console.log(response, 'value in saga ')
     yield put(
      
       Actions.getCategoriesSuccess({
-       
         categoriesData: response.data,
       })
     );

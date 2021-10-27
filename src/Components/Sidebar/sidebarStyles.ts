@@ -16,6 +16,7 @@ color: #000;
     margin-bottom: 25px;
     border-bottom: 1px solid lightgray;
     border-width: 100%;
+    cursor: pointer;
 `
 
 export const DivHead = styled.h4`
