@@ -12,8 +12,10 @@ background-color: lightgray;
 
 export const ContactWrapper = styled.div`
 /* height: 100vh;    */
+padding-right: 20px;
 display: flex;
 flex-direction: column;
+border-right: 1px solid gray;
 `
 
 export const FormWrapper = styled.div`
