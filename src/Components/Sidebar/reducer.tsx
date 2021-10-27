@@ -1,10 +1,7 @@
 import * as Types from "./actionType";
 import {TodoActions, categoriesStateType} from './type'
 
-  
-// interface categories {
-//     categoriesData: string[];
-//   }
+
   
   const initialState: categoriesStateType = {
     pending:false,
@@ -23,6 +20,7 @@ import {TodoActions, categoriesStateType} from './type'
       case Types.FETCH_CATEGORY_SUCCESS:
         return {
           ... state,
+          pending:false,
           categories:action.payload.categoriesData
         };
       case Types.FETCH_CATEGORY_FAILURE:
