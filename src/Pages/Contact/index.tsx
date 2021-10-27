@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Container } from '../../Components/Footer/style'
+import { Container } from './style'
 import { css } from 'styled-components'
 import {ContainerWrapper, ContactWrapper, FormWrapper, Input, Label, Form,  Textarea, StyledButton } from './style'
 
@@ -15,7 +15,7 @@ const WrapperGrid = styled.div`
 function Contact() {
     return (
         <Container>
-            <ContainerWrapper className="row d-md-flex mb-5">
+            <ContainerWrapper className="row d-md-flex p-5">
                 <ContactWrapper className="col-3">
                         <h1>Contact Us</h1>
                         <p>Address: A-4, Sahastradhara Rd, Doon IT Park, Danda Lakhond, Dehradun, Uttarakhand 248001</p>
@@ -25,7 +25,7 @@ function Contact() {
 
                 <FormWrapper className="col-9">
                 <div>
-        <h3>Have any Querry? Send us an Email.</h3>
+        <h3 className="mb-4">Have any Querry? Send us an Email.</h3>
         <Form>
             <WrapperGrid>
                 <Label>Name</Label>

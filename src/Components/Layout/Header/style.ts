@@ -3,20 +3,17 @@ import styled from "styled-components";
 export const HeaderWrapper = styled.div`
 width: 100%;
 color : black;
-position: relative;
+position: sticky;
+top:0;
+z-index: 999;
 display: flex;
-/* border-bottom: 1px grey; */
 border-bottom: 1px solid lightgrey;
-/* background-color: lightgrey; */
-/* justify-content: space-around; */
+background-color: #fff;
 `
 
 export const Logo = styled.div`
 display:flex;
 height: 100%;
 align-items: center;
-/* justify-content: center; */
-font-size: larger;
-font-weight: 700;
-padding: 20px 0px;
+padding: 5px 0px;
 `

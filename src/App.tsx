@@ -10,6 +10,9 @@ import { FooterContainer } from "./Components/Footer";
 import  Layout from "./Components/Layout/Layout";
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Contact from "./Pages/Contact";
+import Login from "./Components/Authentication/Login";
+import Signup from "./Components/Authentication/Signup";
+import Cart from "./Pages/Cart";
 
 
 
@@ -22,6 +25,9 @@ const App: React.FC = () => {
         <Switch>
           <Route exact path="/" component={Layout} /> 
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/cart" component={Cart} />
         </Switch>
         <FooterContainer />
         </div>
