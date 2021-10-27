@@ -3,19 +3,20 @@ import styled from "styled-components";
 export const Container = styled.div`
 width: 100%;
 
+
 `
 export const ContainerWrapper = styled.div`
-border-color: blanchedalmond;
+background-color: lightgray;
 `
 
 export const ContactWrapper = styled.div`
-height: 100vh;
+padding-right: 20px;
 display: flex;
 flex-direction: column;
+border-right: 1px solid gray;
 `
 
 export const FormWrapper = styled.div`
-height: 100vh;
 display: flex;
 padding-left: 80px;
 flex-direction: column;`
@@ -25,7 +26,8 @@ export const StyledButton = styled.button`
     background: white;
     border: 1px solid green; 
     color: green; 
-    padding: 1em; 
+    padding: 1em;
+    height: 40px;
     text-transform: uppercase; 
     width: 20%;
     justify-content: center;
@@ -37,7 +39,6 @@ export const StyledButton = styled.button`
         background: green;
         color: white; 
         outline: 0; 
-        /* transition: background-color 2s ease-out;  */
     }
     `; 
 

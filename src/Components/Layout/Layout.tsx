@@ -1,25 +1,26 @@
-import React from 'react'
-import { Route } from 'react-router'
-import { AppRoutes } from '../../Routes'
-import { FooterContainer } from '../Footer'
-import { ProductList } from '../ProductList'
-import { Carasoul } from '../Carasoul/Carasoul'
-import Sidebar from '../Sidebar/Sidebar'
+import { ProductList } from "../ProductList";
+import { Carasoul } from "../Carasoul/Carasoul";
+import Sidebar from "../Sidebar/Sidebar";
+import { useState } from "react";
 
 function Layout() {
-    return (
-        <div>
-        <div className="row">
-        <div className="col-3">
-        <Sidebar /> 
-          </div>
-          <div className="col-9">
-            <Carasoul />
-          <ProductList />
-          </div>
+  const [category, setCategory] = useState<string>("");
+  const getProductByCategory = (category: string) => {
+    setCategory(category);
+  };
+  return (
+    <div>
+      <div className="row">
+        <div className="col-2">
+          <Sidebar getProductByCategory={getProductByCategory} />
         </div>
+        <div className="col-10">
+          <Carasoul />
+          <ProductList category={category} />
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
-export default Layout
+export default Layout;

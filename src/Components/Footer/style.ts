@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 30px;
+  padding-top: 30px;
   background: #fff;
-  box-shadow: 0px 1px 10px grey;
+  border-top: 1px solid lightgray;
+ 
   @media (max-width: 1000px) {
     padding: 70px 30px;
   }
@@ -14,6 +15,7 @@ export const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
+    
 `
 
 export const Column = styled.div`
@@ -25,7 +27,7 @@ export const Column = styled.div`
 
 export const Row = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 20px;
   @media (max-width: 1000px) {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -39,14 +41,12 @@ export const Link = styled.a`
   text-decoration: none;
   &:hover {
       color: green;
-      transition: 200ms ease-in;
   }
 `;
 
 export const Title = styled.p`
   font-size: 20px;
   color: #362f3b; 
-  /* margin-top: 20px; */
   margin-bottom: 20px;
   font-weight: bold;
 `;

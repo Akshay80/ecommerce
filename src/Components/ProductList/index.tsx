@@ -1,71 +1,71 @@
 import React, { useState } from "react";
-import * as ProductPage from "./productstyled";
-import cardImage from "../../assets/images/product.jpg";
-// import Button from "../Button";
 import "./products.css";
 import { useEffect } from "react";
-import { isTemplateExpression } from "typescript";
-import { getDiffieHellman } from "crypto";
 
-interface Rating {
+interface Ratings {
+  rate: number;
+  count: number;
+}
+export interface Rating {
   rate: number;
   count: number;
 }
 
-interface Ratings {
-    rate: number;
-    count: number;
-  }
-interface Products {
-  id: string;
+export interface Products {
+  id: number;
   price: number;
   description: string;
   image: string;
   category?: string;
   title?: string;
   rating?: Rating;
+  amount?: number;
 }
-
 interface CartProducts {
-    id: string;
-    price: number;
-    description: string;
-    image: string;
-    category?: string;
-    title?: string;
-    rating?: Ratings;
+  id: string;
+  price: number;
+  description: string;
+  image: string;
+  category?: string;
+  title?: string;
+  rating?: Ratings;
 }
 
-export const ProductList: React.FC = () => {
+interface Props {
+  category: string;
+}
+
+export const ProductList: React.FC<Props> = ({ category }) => {
   const [product, setProduct] = useState<Products[]>([]);
   const [cartItem, setCart] = useState<CartProducts | undefined>(undefined);
 
   function getProducts() {
-    fetch("https://fakestoreapi.com/products")
+    let url: string;
+    if (category) {
+      url = `https://fakestoreapi.com/products/category/${category}`;
+    } else {
+      url = "https://fakestoreapi.com/products";
+    }
+    fetch(url)
       .then((res) => res.json())
       .then((res) => {
-        // return res as Products[]
-        console.log(res);
         setProduct(res);
       });
   }
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [category]);
 
-  function getID(id: string) {
-    console.log(id);
-    // CART API
+  function getID(id: number) {
     fetch(`https://fakestoreapi.com/products/${id}`)
       .then((res) => res.json())
-      .then((res) => {setCart(res)});
+      .then((res) => {
+        setCart(res);
+      });
   }
 
-  console.log("Products: ", product);
-  console.log("CartITEMS: ", cartItem);
-
-    type NewType = React.MouseEvent<HTMLElement>;
+  type NewType = React.MouseEvent<HTMLElement>;
 
   return (
     <>
@@ -82,14 +82,12 @@ export const ProductList: React.FC = () => {
                   <img src={items.image} className="img-fluid" alt="" />
                 </div>
                 <h3>
-                  <a href="javascript:void(0)" className="mt-2 text-success">
+                  <a href="/" className="mt-2 text-success">
                     {items.title}
                   </a>
                 </h3>
                 <p className="text-secondary">{items.description}</p>
                 <p className="text-secondary fw-bold">Price: ${items.price}</p>
-                {/* <p className="text-muted text-center text-italic">{items.rating?.rate} out of 5</p> */}
-                {/* <p className="text-center text-secondary">( {items.rating?.count} reviews )</p> */}
                 <div className="text-center">
                   <a
                     href="/"
@@ -112,74 +110,61 @@ export const ProductList: React.FC = () => {
               </div>
             </div>
           ))}
-
-         
-           
-          
         </div>
       </div>
 
-
-{/* {cartItem.map((item) => 
-    <div><h5>{item.title}</h5></div>
-    )} */}
-
-{console.log({cartItem})}
-
-
-
-            <div
-              className="modal fade"
-              id="mymodal"
-              role="dialog"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog" role="document">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h5 className="modal-title" id="exampleModalLabel">
-                      Modal title
-                    </h5>
-                    <button
-                      type="button"
-                      className="close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-          <div className="modal-body">
-              <img src={cartItem?.image} alt="cart_item" width="150px" height="150px"/>
-              <br/>
-            {cartItem?.title}
-            <br/>
-            {cartItem?.price}
-            <br />
-            {cartItem?.description}
-          </div>
-                
-
-
-                  <div className="modal-footer">
-                    <button
-                      type="button"
-                      className="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button type="button" className="btn btn-primary">
-                      Save changes
-                    </button>
-                  </div>
-                </div>
-              </div>
+      <div
+        className="modal fade"
+        id="mymodal"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">
+                Modal title
+              </h5>
+              <button
+                type="button"
+                className="close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="modal-body">
+              <img
+                src={cartItem?.image}
+                alt="cart_item"
+                width="150px"
+                height="150px"
+              />
+              <br />
+              {cartItem?.title}
+              <br />
+              {cartItem?.price}
+              <br />
+              {cartItem?.description}
             </div>
 
-
-
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" className="btn btn-primary">
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

@@ -1,39 +1,53 @@
-import React from "react";
-import { Ul, Input } from "./style";
-import "../../../index.css"
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { Ul, Input, Wrapper, StyledButton } from "./style";
+import "../../../index.css";
+import { Link } from "react-router-dom";
+import Cart from "../../../Pages/CartContainer/Cart/Cart";
+import { Products } from "../../../Components/ProductList";
+import Drawer from "@material-ui/core/Drawer";
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
+import Badge from "@material-ui/core/Badge";
 
-function Navbar() {
+const Navbar = () => {
+  const [cartOpen, setCartOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([] as Products[]);
+
+  const getTotalItems = (items: Products[]) =>
+    items.reduce((ack: number, item) => ack, 0);
+
+  const handleAddToCart = (clickedItem: Products) => {
+    setCartItems((prev) => {
+      // 1. Is the item already added in the cart?
+      const isItemInCart = prev.find((item) => item.id === clickedItem.id);
+
+      if (isItemInCart) {
+        return prev.map((item) =>
+          item.id === clickedItem.id ? { ...item, amount: 1 } : item
+        );
+      }
+      // First time the item is added
+      return [...prev, { ...clickedItem, amount: 1 }];
+    });
+  };
+
+  // const handleRemoveFromCart = (id: number) => {
+  //   setCartItems(prev =>
+  //     prev.reduce((ack, item) => {
+  //       if (item.id === id) {
+  //         if (item.amount === 1) return ack;
+  //     }, [] as Products[])
+  //   );
+  // };
+
   return (
     <Ul>
       <Input className="search-bar" type="text" placeholder="Search"></Input>
       <div className="dropdown">
-        <button
-          className="btn  dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton1"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Home
-        </button>
-        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li>
-            <a className="dropdown-item" href="#">
-              Action
-            </a>
-          </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Another action
-            </a>
-          </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Something else here
-            </a>
-          </li>
-        </ul>
+        <Link to="/">
+          <button className="btn" type="button">
+            Home
+          </button>
+        </Link>
       </div>
 
       <div className="dropdown">
@@ -77,29 +91,50 @@ function Navbar() {
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
           <li>
-            <a className="dropdown-item" href="#">
+            <Link to="/login" className="dropdown-item" href="#">
               Login
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="dropdown-item" href="#">
+            <Link to="/signup" className="dropdown-item" href="#">
               Signup
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
 
       <div className="dropdown">
         <Link to="/contact">
-        <button
-          className="btn"
-          type="button" 
-        >
-        Contact Us
-        </button></Link>
+          <button className="btn" type="button">
+            Contact
+          </button>
+        </Link>
+      </div>
+      <div className="dropdown">
+        <Wrapper>
+          <Drawer
+            anchor="right"
+            open={cartOpen}
+            onClose={() => setCartOpen(false)}
+          >
+            <Cart
+              cartItems={cartItems}
+              addToCart={handleAddToCart}
+              // removeFromCart={handleRemoveFromCart}
+            />
+          </Drawer>
+          <StyledButton onClick={() => setCartOpen(true)}>
+            <Badge badgeContent={getTotalItems(cartItems)} color="error">
+              <button className="btn d-flex" type="button">
+                Cart
+                <AddShoppingCartIcon />
+              </button>
+            </Badge>
+          </StyledButton>
+        </Wrapper>
       </div>
     </Ul>
   );
-}
+};
 
 export default Navbar;
