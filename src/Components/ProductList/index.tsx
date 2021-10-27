@@ -1,86 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import * as ProductPage from "./productstyled";
 import cardImage from "../../assets/Images/product.jpg";
 // import Button from "../Button";
 import './products.css';
+import { useEffect } from "react";
+
+interface Rating{
+rate: number,
+count: number
+}
+interface Products {
+  id: string
+  price: number
+  description: string
+  image: string
+  category?: string
+  title?: string
+  rating?: Rating
+}
 
 export const ProductList: React.FC = () => {
+  const [product, setProduct] = useState<Products[]>([]);
+
+function getProducts() {
+   fetch('https://fakestoreapi.com/products')
+  .then(res => res.json())
+  .then(res => {
+          // return res as Products[]
+          console.log(res);
+          
+          setProduct(res)
+  })
+}
+
+useEffect(() => {
+  getProducts();
+},[])
+
+console.log("Products: ", product);
+
   return (
       <>
-      {/* First Row */}
-    {/* <div className="container mt-5">
-        <div className="row">
-            <div className="col">
-            <ProductPage.Wrapper >
-      <div className="card" style={{ width: "18rem" }}>
-        <ProductPage.Image src={cardImage}></ProductPage.Image>
-        <div className="card-body">
-          <h5 className="card-title">Price: $109</h5>
-          <p className="card-text">Description: The Description </p>
-          <Button
-            text="click me"
-            className="btn btn-primary productBtn"
-          ></Button>
-        </div>
-      </div>
-    </ProductPage.Wrapper>
-            </div>
-
-
-            <div className="col">
-            <ProductPage.Wrapper >
-      <div className="card" style={{ width: "18rem" }}>
-        <ProductPage.Image src={cardImage}></ProductPage.Image>
-        <div className="card-body">
-          <h5 className="card-title">Price: $109</h5>
-          <p className="card-text">Description: The Description </p>
-          <Button
-            text="click me"
-            className="btn btn-primary productBtn"
-          ></Button>
-        </div>
-      </div>
-    </ProductPage.Wrapper>
-            </div>
-
-
-
-            <div className="col">
-            <ProductPage.Wrapper >
-      <div className="card" style={{ width: "18rem" }}>
-        <ProductPage.Image src={cardImage}></ProductPage.Image>
-        <div className="card-body">
-          <h5 className="card-title">Price: $109</h5>
-          <p className="card-text">Description: The Description </p>
-          <Button
-            text="click me"
-            className="btn btn-primary productBtn"
-          ></Button>
-        </div>
-      </div>
-    </ProductPage.Wrapper>
-            </div>
-        </div>
-    </div> */}
     <div className="container mb-5">
     <div className="row">
         <div className="col-12">
             <h2 className="mt-4 mb-4 text-center">Our Products</h2>
         </div>
-        <div className="col-md-6 col-lg-4">
-       
-            <div className="card-box">
-                <div className="card-thumbnail">
-                    <img src={cardImage} className="img-fluid" alt=""/>
-                </div>
-                <h3><a href="#" className="mt-2 text-danger">Shoes</a></h3>
-                <p className="text-secondary">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                <p className="text-secondary fw-bold">$26.00</p>
-                <a href="#" className="btn btn-sm btn-danger float-right">Read more &#8594;</a>
-            </div>
-        </div>
 
-        <div className="col-md-6 col-lg-4">
+        {product.map( items => 
+ <div className="col-md-6 col-lg-4">
+       
+ <div className="card-box">
+     <div className="card-thumbnail">
+         <img src={items.image} className="img-fluid" alt=""/>
+     </div>
+     <h3><a href="javascript:void(0)" className="mt-2 text-danger">{items.title}</a></h3>
+     <p className="text-secondary">{items.description}</p>
+     <p className="text-secondary fw-bold">${items.price}</p>
+     <a href="#" className="btn btn-sm btn-danger float-right">Read more &#8594;</a>
+ </div>
+</div>
+        )}
+       
+
+        {/* <div className="col-md-6 col-lg-4">
             <div className="card-box">
                 <div className="card-thumbnail">
                     <img src={cardImage} className="img-fluid" alt=""/>
@@ -139,7 +122,7 @@ export const ProductList: React.FC = () => {
                 <p className="text-secondary fw-bold">$490.00</p>
                 <a href="#" className="btn btn-sm btn-danger float-right">Read more &#8594;</a>
             </div>
-        </div>
+        </div> */}
     </div>
 </div>
 

@@ -26,16 +26,16 @@ export const Ul = styled.ul`
     right: 0;
     height: 100vh;
     width: 300px;
-    /* padding-top: 3.5rem; */
-    transition: transform 0.3s ease-in-out;
     li {
       color: #fff;
     }
+
   }
 `
 
 export const Input= styled.input`
 margin-right: 40px;
+height: 35px;
 display: flex;
 align-items: center;
 justify-content: center;
