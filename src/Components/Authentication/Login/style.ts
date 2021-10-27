@@ -103,7 +103,7 @@ margin-bottom: 10px;
   outline: none;
   color: #3c354e;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 500s;
   &:focus {
     display: inline-block;
     box-shadow: 0 0 0 0.2rem #b9abe0;

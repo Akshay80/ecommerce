@@ -5,18 +5,19 @@ import cardImage from "../../assets/Images/product.jpg";
 import './products.css';
 import { useEffect } from "react";
 
-interface Rating{
+export interface Rating{
 rate: number,
 count: number
 }
-interface Products {
-  id: string
+export interface Products {
+  id: number
   price: number
   description: string
   image: string
   category?: string
   title?: string
   rating?: Rating
+  amount?: number
 }
 
 export const ProductList: React.FC = () => {

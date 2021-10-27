@@ -2,9 +2,9 @@ import React from 'react'
 import { Route } from 'react-router'
 import { AppRoutes } from '../../Routes'
 import { FooterContainer } from '../Footer'
-import { ProductList } from '../ProductList'
 import { Carasoul } from '../Carasoul/Carasoul'
 import Sidebar from '../Sidebar/Sidebar'
+import { ProductList } from '../../Components/ProductList/index'
 
 function Layout() {
     return (
@@ -15,7 +15,7 @@ function Layout() {
           </div>
           <div className="col-10">
             <Carasoul />
-          <ProductList />
+          <ProductList/>
           </div>
         </div>
         </div>
