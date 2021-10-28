@@ -1,5 +1,7 @@
 import React from "react";
 import "./carasoul.css";
+import slide1 from '../../assets/images/slide1.jpg';
+import slide2 from '../../assets/images/slide2.jpg';
 
 export const Carasoul: React.FC = () => {
   return (
@@ -12,7 +14,7 @@ export const Carasoul: React.FC = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              src="https://d-themes.com/wordpress/riode/beauty/wp-content/uploads/sites/82/2021/01/slide-1.jpg"
+              src={slide1}
               className="d-block w-100"
               style={{ objectFit: "cover" }}
               alt="..."
@@ -37,7 +39,7 @@ export const Carasoul: React.FC = () => {
           </div>
           <div className="carousel-item">
             <img
-              src="https://d-themes.com/wordpress/riode/beauty/wp-content/uploads/sites/82/2021/01/slide-2.jpg"
+              src={slide2}
               className="d-block w-100"
               alt="..."
             />

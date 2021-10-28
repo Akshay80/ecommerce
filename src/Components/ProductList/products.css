@@ -1,3 +1,4 @@
+
 .card-box {
     border: 1px solid #ddd;
     padding: 20px;
@@ -24,4 +25,33 @@
     font-size: 20px;
     text-decoration: none;
     text-overflow: ellipsis;
+}
+.title{
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.category{
+    color:#999999;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+}
+
+.price{
+    color: #ffa372;
+    font-family: 'Jost', sans-serif;
+    font-size: 29px;
+    font-weight: bold;
+}
+.description{
+    font-size: 14px;
+    color:#666666;
+    font-family: 'Jost', sans-serif;
+}
+
+.count{
+    font-size: 13px;
+    color:#666666;
+    font-family: 'Jost', sans-serif;
+    margin-left: 10px;
 }

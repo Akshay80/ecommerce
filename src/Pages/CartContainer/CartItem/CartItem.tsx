@@ -15,7 +15,7 @@ const CartItem: React.FC<Props> = ({ item, addToCart }) => (
         <p>Price: ${item.price}</p>
       </div>
       <div className="buttons">
-        <Button size="small" disableElevation variant="contained">
+        {/* <Button size="small" disableElevation variant="contained">
           -
         </Button>
 
@@ -26,7 +26,7 @@ const CartItem: React.FC<Props> = ({ item, addToCart }) => (
           onClick={() => addToCart(item)}
         >
           +
-        </Button>
+        </Button> */}
       </div>
     </div>
     <img src={item.image} alt={item.title} />
