@@ -8,6 +8,7 @@ import Drawer from "@material-ui/core/Drawer";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import Badge from "@material-ui/core/Badge";
 
+
 const Navbar = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([] as Products[]);
@@ -22,22 +23,25 @@ const Navbar = () => {
 
       if (isItemInCart) {
         return prev.map((item) =>
-          item.id === clickedItem.id ? { ...item, amount: 1 } : item
+          item.id === clickedItem.id ? { ...item, amount: item.amount + 1 } : item
         );
       }
-      // First time the item is added
       return [...prev, { ...clickedItem, amount: 1 }];
     });
   };
 
-  // const handleRemoveFromCart = (id: number) => {
-  //   setCartItems(prev =>
-  //     prev.reduce((ack, item) => {
-  //       if (item.id === id) {
-  //         if (item.amount === 1) return ack;
-  //     }, [] as Products[])
-  //   );
-  // };
+  const handleRemoveFromCart = (id: number) => {
+    setCartItems(prev =>
+      prev.reduce((ack, item) => {
+        if (item.id === id) {
+          if (item.amount === 1) return ack;
+          return [...ack, { ...item, amount: item.amount - 1 }];
+        } else {
+          return [...ack, item];
+        }
+      }, [] as Products[])
+    );
+  };
 
   return (
     <Ul>
@@ -48,35 +52,6 @@ const Navbar = () => {
             Home
           </button>
         </Link>
-      </div>
-
-      <div className="dropdown">
-        <button
-          className="btn  dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton1"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Categories
-        </button>
-        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li>
-            <a className="dropdown-item" href="#">
-              Action
-            </a>
-          </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Another action
-            </a>
-          </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Something else here
-            </a>
-          </li>
-        </ul>
       </div>
 
       <div className="dropdown">
@@ -120,7 +95,7 @@ const Navbar = () => {
             <Cart
               cartItems={cartItems}
               addToCart={handleAddToCart}
-              // removeFromCart={handleRemoveFromCart}
+              removeFromCart={handleRemoveFromCart}
             />
           </Drawer>
           <StyledButton onClick={() => setCartOpen(true)}>

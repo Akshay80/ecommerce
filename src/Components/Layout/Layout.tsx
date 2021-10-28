@@ -3,11 +3,13 @@ import { Carasoul } from "../Carasoul/Carasoul";
 import Sidebar from "../Sidebar/Sidebar";
 import { useState } from "react";
 
+
 function Layout() {
   const [category, setCategory] = useState<string>("");
   const getProductByCategory = (category: string) => {
     setCategory(category);
   };
+
   return (
     <div>
       <div className="row">

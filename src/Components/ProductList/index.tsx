@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./products.css";
 import { useEffect } from "react";
-import Rate from "@material-ui/lab/Rating";
+import Rate from '@material-ui/lab/Rating/Rating'
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 interface Ratings {
@@ -18,26 +18,29 @@ export interface Products {
   price: number;
   description: string;
   image: string;
-  category?: string;
-  title?: string;
-  rating?: Rating;
-  amount?: number;
+  category: string;
+  title: string;
+  rating: Rating;
+  amount: number;
 }
-interface CartProducts {
-  id: string;
+export interface CartProducts {
+  id: number;
   price: number;
   description: string;
   image: string;
-  category?: string;
-  title?: string;
-  rating?: Ratings;
-}
-
-interface Props {
   category: string;
+  title: string;
+  rating: Ratings;
+  amount: number;
 }
 
-export const ProductList: React.FC<Props> = ({ category }) => {
+export interface Props {
+  category: string;
+  items?: Products;
+
+}
+
+export const ProductList: React.FC<Props> = ({ category}) => {
   const [product, setProduct] = useState<Products[]>([]);
   const [cartItem, setCart] = useState<CartProducts | undefined>(undefined);
   const [loading, setLoading] = useState(false);
@@ -59,7 +62,6 @@ export const ProductList: React.FC<Props> = ({ category }) => {
       setLoading(false);
     }, 1000);
   }
-
   useEffect(() => {
     getProducts();
   }, [category]);
@@ -71,6 +73,37 @@ export const ProductList: React.FC<Props> = ({ category }) => {
         setCart(res);
       });
   }
+
+
+  // const handleAddToCart = (clickedItem: Products) => {
+  //   setCart(prev => {
+  //     // 1. Is the item already added in the cart?
+  //     const isItemInCart = prev.find(item => item.id === clickedItem.id);
+  //     if (isItemInCart) {
+  //       return prev.map(item =>
+  //         item.id === clickedItem.id
+  //           ? { ...item, amount: item.amount + 1 }
+  //           : item
+  //       );
+  //     }
+  //     // First time the item is added
+  //     return [...prev, { ...clickedItem, amount: 1 }];
+  //   });
+  // };
+
+  
+  // const handleRemoveFromCart = (id: number) => {
+  //   setCart(prev =>
+  //     prev.reduce((ack, item) => {
+  //       if (item.id === id) {
+  //         if (item.amount === 1) return ack;
+  //         return [...ack, { ...item, amount: item.amount - 1 }];
+  //       } else {
+  //         return [...ack, item];
+  //       }
+  //     }, [] as Products[])
+  //   );
+  // };
 
   type NewType = React.MouseEvent<HTMLElement>;
 
@@ -124,7 +157,7 @@ export const ProductList: React.FC<Props> = ({ category }) => {
         {loading && <CircularProgress color="primary"></CircularProgress>}
       </div>
 
-      <div
+       <div
         className="modal fade"
         id="mymodal"
         role="dialog"
