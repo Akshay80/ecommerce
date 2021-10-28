@@ -1,7 +1,7 @@
 import React from "react";
 import { Logo } from "../Layout/Header/style";
 import Footer from "./FooterContainer";
-import ImgLogo from "../../assets/Images/logo_trans.png";
+import ImgLogo from "../../assets/images/logo_trans.png";
 
 export function FooterContainer() {
   return (
@@ -38,13 +38,6 @@ export function FooterContainer() {
             <Footer.Link href="#">Track Your Order</Footer.Link>
             <Footer.Link href="#">My Wishlist</Footer.Link>
           </Footer.Column>
-          {/* <Footer.Column>
-                <Footer.Title>Social</Footer.Title>
-                    <Footer.Link href="#"><Icon className="fab fa-facebook-f" />Facebook</Footer.Link>
-                    <Footer.Link href="#"><Icon className="fab fa-instagram" />Instagram</Footer.Link>
-                    <Footer.Link href="#"><Icon className="fab fa-youtube" />Youtube</Footer.Link>
-                    <Footer.Link href="#"><Icon className="fab fa-twitter" />Twitter</Footer.Link>
-                </Footer.Column> */}
         </Footer.Row>
       </Footer.Wrapper>
     </Footer>

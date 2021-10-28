@@ -1,37 +1,31 @@
 import React from "react";
 import Header from "./Components/Layout/Header/index";
-import { AppRoutes } from './Routes';
-import {ProductList} from "./Components/ProductList"
-import { Carasoul } from './Components/Carasoul/Carasoul';
-import './App.css';
+import "./App.css";
 import { FooterContainer } from "./Components/Footer";
-import  Layout from "./Components/Layout/Layout";
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Layout from "./Components/Layout/Layout";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Contact from "./Pages/Contact";
 import Login from "./Components/Authentication/Login";
 import Signup from "./Components/Authentication/Signup";
-import  ForgotPassword  from "./Components/Authentication/ForgotPassword";
+import ForgotPassword from "./Components/Authentication/ForgotPassword";
 import Cart from "./Pages/CartContainer/Cart/Cart";
 
 const App: React.FC = () => {
   return (
-  
-      <Router>
-          <div className="App"> 
-          <Header />
+    <Router>
+      <div className="App">
+        <Header />
         <Switch>
-          <Route exact path="/" component={Layout} /> 
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/cart" component={Cart} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={Signup} /> 
-            <Route exact path="/forgot-password" component={ForgotPassword} />
+          <Route exact path="/" component={Layout} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/cart" component={Cart} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/forgot-password" component={ForgotPassword} />
         </Switch>
         <FooterContainer />
-        </div>
-      </Router>
-     
-
+      </div>
+    </Router>
   );
 };
 

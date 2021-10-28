@@ -1,31 +1,31 @@
 import CartItem from '../CartItem/CartItem';
 import { Wrapper } from './Cart.styles';
-import { Products } from '../../../Components/ProductList/index';
+import { Products } from '../../../Components/ProductList';
+
 
 type Props = {
   cartItems: Products[];
   addToCart: (clickedItem: Products) => void;
-  // removeFromCart: (id: number) => void;
+  removeFromCart: (id: number) => void;
 };
 
-const Cart: React.FC<Props> = ({ cartItems, addToCart }) => {
+const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
   const calculateTotal = (items: Products[]) =>
-    items?.reduce((ack: number, item) => item.price, 0);
-    // items.reduce((ack: number, item) => ack + item.amount * item.price, 0);
+    items.reduce((ack: number, item) => ack + item.amount * item.price, 0);
 
   return (
     <Wrapper>
-      <h3>Your Shopping Cart</h3>
-      {cartItems?.length === 0 ? <p>No items in cart.</p> : null}
-      {cartItems?.map(item => (
+      <h2>Your Shopping Cart</h2>
+      {cartItems.length === 0 ? <p>No items in cart.</p> : null}
+      {cartItems.map(item => (
         <CartItem
           key={item.id}
-          item={item} 
+          item={item}
           addToCart={addToCart}
-          // removeFromCart={removeFromCart}
+          removeFromCart={removeFromCart}
         />
       ))}
-      <h4>Total Price: ${calculateTotal(cartItems)?.toFixed(2)}</h4>
+      <h2>Total: ${calculateTotal(cartItems).toFixed(2)}</h2>
     </Wrapper>
   );
 };

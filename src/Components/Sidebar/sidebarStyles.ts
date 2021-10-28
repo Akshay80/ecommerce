@@ -21,5 +21,5 @@ color: #000;
 
 export const DivHead = styled.h4`
 color:#000;
-margin-bottom: 2em;
+margin: 1em 0;
 `
