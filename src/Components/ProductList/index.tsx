@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./products.css";
 import { useEffect } from "react";
-import Rate from '@material-ui/lab/Rating/Rating'
-import CircularProgress from "@material-ui/core/CircularProgress";
+import Rate from '@material-ui/lab/Rating/'
+import CircularProgress from "@material-ui/core/CircularProgress";  
 
 interface Ratings {
   rate: number;
@@ -37,12 +37,23 @@ export interface CartProducts {
 export interface Props {
   category: string;
   items?: Products;
-
 }
+
+export type CartItemType = {
+  id: number;
+  category: string;
+  description: string;
+  image: string;
+  price: number;
+  title: string;  
+  amount: number;
+};
+
 
 export const ProductList: React.FC<Props> = ({ category}) => {
   const [product, setProduct] = useState<Products[]>([]);
-  const [cartItem, setCart] = useState<CartProducts | undefined>(undefined);
+  const [cartItem, setCart] = useState<CartProducts | undefined>(undefined);  
+  const [cartItems, setCartItems] = useState([] as CartItemType[]);
   const [loading, setLoading] = useState(false);
 
   function getProducts() {
@@ -74,36 +85,39 @@ export const ProductList: React.FC<Props> = ({ category}) => {
       });
   }
 
-
-  // const handleAddToCart = (clickedItem: Products) => {
-  //   setCart(prev => {
-  //     // 1. Is the item already added in the cart?
-  //     const isItemInCart = prev.find(item => item.id === clickedItem.id);
-  //     if (isItemInCart) {
-  //       return prev.map(item =>
-  //         item.id === clickedItem.id
-  //           ? { ...item, amount: item.amount + 1 }
-  //           : item
-  //       );
-  //     }
-  //     // First time the item is added
-  //     return [...prev, { ...clickedItem, amount: 1 }];
-  //   });
-  // };
-
+  const getTotalItems = (items: CartItemType[]) =>
+  items.reduce((ack: number, item) => ack + item.amount, 0);
   
-  // const handleRemoveFromCart = (id: number) => {
-  //   setCart(prev =>
-  //     prev.reduce((ack, item) => {
-  //       if (item.id === id) {
-  //         if (item.amount === 1) return ack;
-  //         return [...ack, { ...item, amount: item.amount - 1 }];
-  //       } else {
-  //         return [...ack, item];
-  //       }
-  //     }, [] as Products[])
-  //   );
-  // };
+  const handleAddToCart = (clickedItem: CartItemType) => {
+    setCartItems(prev => {
+      // 1. Is the item already added in the cart?
+      const isItemInCart = prev.find(item => item.id === clickedItem.id);
+
+      if (isItemInCart) {
+        return prev.map(item =>
+          item.id === clickedItem.id
+            ? { ...item, amount: item.amount + 1 }
+            : item
+        );
+      }
+      // First time the item is added
+      return [...prev, { ...clickedItem, amount: 1 }];
+    });
+  };
+
+  const handleRemoveFromCart = (id: number) => {
+    setCartItems(prev =>
+      prev.reduce((ack, item) => {
+        if (item.id === id) {
+          if (item.amount === 1) return ack;
+          return [...ack, { ...item, amount: item.amount - 1 }];
+        } else {
+          return [...ack, item];
+        }
+      }, [] as CartItemType[])
+    );
+  };
+
 
   type NewType = React.MouseEvent<HTMLElement>;
 
@@ -114,7 +128,6 @@ export const ProductList: React.FC<Props> = ({ category}) => {
           <div className="col-12">
             <h2 className="mt-4 mb-4 text-center">Our Products</h2>
           </div>
-
           {product.map((items, index) => (
             <div className="col-md-6 col-lg-4" key={index}>
               <div className="card-box">

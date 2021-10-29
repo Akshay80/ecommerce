@@ -3,7 +3,7 @@ import Contact from "../Pages/Contact";
 import Login from "../Components/Authentication/Login";
 import Signup from "../Components/Authentication/Signup";
 import ForgotPassword from "../Components/Authentication/ForgotPassword";
-import { Cart } from "../Pages/CartContainer/Cart/Cart";
+import CartContainer from "../Pages/CartContainer/cart.container";
 
 export const AppRoutes = () => {
   return (
@@ -12,7 +12,7 @@ export const AppRoutes = () => {
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
-        <Route exact path="/cart" component={Cart} />
+        <Route exact path="/cart" component={CartContainer} />
         <Route exact path="/forgot-password" component={ForgotPassword} />
       </Switch>
     </Router>
